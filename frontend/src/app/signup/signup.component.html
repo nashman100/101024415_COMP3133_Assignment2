@@ -1,0 +1,40 @@
+<div class="auth-container">
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="auth-form">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" />
+      <mat-error *ngIf="signupForm.get('username')?.hasError('required')">
+        Username is required.
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+      <mat-error *ngIf="signupForm.get('email')?.hasError('required')">
+        Email is required.
+      </mat-error>
+      <mat-error *ngIf="signupForm.get('email')?.hasError('email')">
+        Please enter a valid email.
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" />
+      <mat-error *ngIf="signupForm.get('password')?.hasError('required')">
+        Password is required.
+      </mat-error>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit" [disabled]="loading || signupForm.invalid">
+      {{ loading ? 'Signing up…' : 'Sign Up' }}
+    </button>
+  
+    <p class="text-center mt-3">
+      Already have an account? <a [routerLink]="['/login']">Log in here</a>
+    </p>
+  
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+  </form>  
+</div>

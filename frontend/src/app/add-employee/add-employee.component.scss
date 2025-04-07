@@ -1,0 +1,83 @@
+.add-employee-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f7fc; 
+  mat-card {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+
+  mat-card-header {
+    background-color: #3f51b5;
+    color: white;
+    padding-bottom: 20px;
+
+    mat-card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  mat-form-field {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+    mat-label {
+      font-size: 1rem;
+    }
+
+    input {
+      font-size: 1rem;
+      padding: 10px;
+    }
+
+    mat-error {
+      font-size: 0.875rem;
+    }
+  }
+
+  .file-upload {
+    margin-bottom: 16px;
+
+    label {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    input[type="file"] {
+      padding: 6px;
+      background-color: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      width: 100%;
+    }
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      background-color: #3f51b5;
+      color: white;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      &:hover {
+        background-color: #303f9f;
+      }
+      &:disabled {
+        background-color: #b0bec5;
+      }
+    }
+  }
+}
